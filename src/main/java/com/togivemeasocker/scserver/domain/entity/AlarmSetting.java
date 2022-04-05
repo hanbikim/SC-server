@@ -1,4 +1,4 @@
-package com.togivemeasocker.scserver.model;
+package com.togivemeasocker.scserver.domain.entity;
 
 import javax.persistence.*;
 
@@ -14,7 +14,7 @@ public class AlarmSetting {
     private Long id;
 
     @OneToOne(mappedBy = "alarmSetting")
-    private User user;
+    private UserEntity user;
 
     private boolean commentAlarm;
 

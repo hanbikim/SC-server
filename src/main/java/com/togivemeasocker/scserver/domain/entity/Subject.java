@@ -1,4 +1,4 @@
-package com.togivemeasocker.scserver.model;
+package com.togivemeasocker.scserver.domain.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

@@ -1,4 +1,4 @@
-package com.togivemeasocker.scserver.model;
+package com.togivemeasocker.scserver.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
@@ -21,7 +21,7 @@ public class Post {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private User user;
+    private UserEntity user;
 
     private Boolean isAnonymous;
 

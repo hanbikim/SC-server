@@ -1,4 +1,4 @@
-package com.togivemeasocker.scserver.model;
+package com.togivemeasocker.scserver.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -12,24 +12,22 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Announcement {
+public class Comment {
     @Id
     private Long id;
 
-    @Enumerated(EnumType.ORDINAL)
-    private AnnouncementCategory category;
-
-    private String title;
+    private boolean isAnonymous;
 
     private String content;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss", timezone = "Asia/Seoul")
     private LocalDateTime writtenDate;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss", timezone = "Asia/Seoul")
-    private LocalDateTime dueDate;
+    @ManyToOne
+    @JoinColumn(name = "post_id")
+    private Post post;
 
     @ManyToOne
-    @JoinColumn(name = "subject_id")
-    private Subject subject;
+    @JoinColumn(name = "user_id")
+    private UserEntity user;
 }

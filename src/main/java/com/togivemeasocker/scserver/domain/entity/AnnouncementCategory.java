@@ -1,4 +1,4 @@
-package com.togivemeasocker.scserver.model;
+package com.togivemeasocker.scserver.domain.entity;
 
 public enum AnnouncementCategory {
     GENERAL, ASSIGNMENT, PROMOTION
